@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/**
+ * @brief Counts the number of elements in a NULL-terminated array of strings.
+ * 
+ * @param arr The array of strings to measure.
+ * @return The number of elements in the array, or 0 if the array is NULL.
+ */
 int	ft_array_len(char **arr)
 {
 	int	i;
