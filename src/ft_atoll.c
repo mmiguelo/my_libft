@@ -18,7 +18,7 @@
  * @param str A pointer to the string to be converted
  * @return Returns the converted long long integer value
  */
-long	ft_atol(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int			i;
 	long long	sign;
