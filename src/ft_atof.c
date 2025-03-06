@@ -20,27 +20,29 @@
  */
 float	ft_atof(const char *str)
 {
-	int		i;
 	float	sign;
 	float	result;
+	float	decimal;
 
-	i = 0;
 	sign = 1;
 	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if ((str[i] == '+') || (str[i] == '-'))
+	decimal = 0.1;
+	while ((*str >= 9 && *str <= 13) || (*str == 32))
+		str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')	
+		str++;
+	while (*str >= '0' && *str <= '9')
+		result = (result * 10) + (*str++ - '0');
+	if (*str == '.')
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	if ((str[i] == '+') || (str[i] == '-'))
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = (result * 10) + (str[i] - '0');
-		i++;
+		str++;
+		while (*str >= '0' && *str <= '9')
+		{
+			result += (*str++ - '0') * decimal;
+			decimal /= 10;
+		}
 	}
 	return (result * sign);
 }
