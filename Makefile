@@ -29,8 +29,11 @@ NAME = libft.a
 
 OBJ_DIR = obj
 
-GENERAL = ft_atoi
+GENERAL = ft_array_len
+GENERAL += ft_atof
+GENERAL += ft_atoi
 GENERAL += ft_atol
+GENERAL += ft_atoll
 GENERAL += ft_bzero
 GENERAL += ft_calloc
 GENERAL += ft_isalnum
